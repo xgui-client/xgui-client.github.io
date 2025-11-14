@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xullys — HyperAdvanced</title>
+
+<!-- tsParticles -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles"></script>
+
+<style>
+/* GLOBAL ------------------------------------------------------ */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Inter", sans-serif;
+}
+body{
+    background:#0b0b13;
+    color:#fff;
+    overflow-x:hidden;
+}
+/* particle canvas */
+#tsparticles{
+    position:fixed;
+    width:100vw;
+    height:100vh;
+    top:0;
+    left:0;
+    z-index:-10;
+}
+
+/* NAVBAR ------------------------------------------------------ */
+nav{
+    width:100%;
+    top:0;
+    left:0;
+    position:fixed;
+    padding:20px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(10px);
+    z-index:10;
+}
+nav svg{
+    height:45px;
+}
+nav a{
+    margin-left:25px;
+    text-decoration:none;
+    font-size:1rem;
+    color:#aaa;
+    transition:.25s;
+}
+nav a:hover{
+    color:#fff;
+}
+
+/* SECTIONS ---------------------------------------------------- */
+section{
+    padding:120px 70px;
+    min-height:100vh;
+}
+
+/* HERO -------------------------------------------------------- */
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+.hero h1{
+    font-size:4rem;
+    font-weight:900;
+    background:linear-gradient(90deg,#7f5bff,#4dc7ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+.hero p{
+    max-width:550px;
+    font-size:1.2rem;
+    color:#ccc;
+    margin-top:20px;
+}
+.button{
+    display:inline-block;
+    padding:14px 35px;
+    margin-top:25px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.2);
+    backdrop-filter:blur(8px);
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s ease;
+}
+.button:hover{
+    background:rgba(127,91,255,0.2);
+    border-color:rgba(127,91,255,0.5);
+}
+
+/* 3D CUBE ----------------------------------------------------- */
+.cube{
+    width:200px;
+    height:200px;
+    position:relative;
+    transform-style:preserve-3d;
+    animation:spin 8s linear infinite;
+}
+.cube div{
+    position:absolute;
+    width:200px;
+    height:200px;
+    border:3px solid #7f5bff;
+    border-radius:10px;
+    background:rgba(255,255,255,0.03);
+    backdrop-filter:blur(8px);
+}
+@keyframes spin{
+    from{transform:rotateX(-20deg) rotateY(0deg);}
+    to{transform:rotateX(-20deg) rotateY(360deg);}
+}
+.front{transform:translateZ(100px);}
+.back{transform:rotateY(180deg) translateZ(100px);}
+.right{transform:rotateY(90deg) translateZ(100px);}
+.left{transform:rotateY(-90deg) translateZ(100px);}
+.top{transform:rotateX(90deg) translateZ(100px);}
+.bottom{transform:rotateX(-90deg) translateZ(100px);}
+
+/* CARDS ------------------------------------------------------- */
+.card{
+    padding:30px;
+    margin-bottom:30px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.12);
+    background:rgba(255,255,255,0.04);
+    backdrop-filter:blur(10px);
+    transition:.3s;
+}
+.card:hover{
+    border-color:rgba(127,91,255,0.6);
+    background:rgba(127,91,255,0.1);
+}
+
+/* FOOTER */
+footer{
+    padding:60px;
+    text-align:center;
+    color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PARTICLES -->
+<div id="tsparticles"></div>
+
+<!-- NAVBAR -->
+<nav>
+    <!-- Inline SVG LOGO -->
+    <svg width="180" height="50" viewBox="0 0 550 140">
+        <defs>
+            <linearGradient id="grad" x1="0%" x2="100%">
+                <stop offset="0%" stop-color="#7f5bff"/>
+                <stop offset="100%" stop-color="#4dc7ff"/>
+            </linearGradient>
+        </defs>
+        <text x="0" y="100" font-family="Orbitron" font-size="110"
+              fill="url(#grad)" font-weight="900"
+              letter-spacing="8">
+            XULLYS
+        </text>
+    </svg>
+
+    <div>
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#docs">Docs</a>
+        <a href="#download">Download</a>
+        <a href="#about">About</a>
+    </div>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="hero">
+    <div>
+        <h1>HyperAdvanced Client</h1>
+        <p>Ultra-modern. Particle powered. Engineered with precision by Xullys.</p>
+        <a class="button" href="#features">Explore Features</a>
+    </div>
+
+    <div class="cube">
+        <div class="front"></div>
+        <div class="back"></div>
+        <div class="right"></div>
+        <div class="left"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+    <h1>Features</h1>
+
+    <div class="card"><h2>Ultra-Sleek UI</h2><p>Beautiful glassmorphism interface.</p></div>
+    <div class="card"><h2>Particle System</h2><p>Dynamic glowing motion network.</p></div>
+    <div class="card"><h2>3D Elements</h2><p>Rotating cube adds immersive depth.</p></div>
+</section>
+
+<!-- DOCS -->
+<section id="docs">
+    <h1>Documentation</h1>
+    <div class="card">
+        <h2>Getting Started</h2>
+        <p>Setup instructions, usage guide, structure, and options.</p>
+    </div>
+</section>
+
+<!-- DOWNLOAD -->
+<section id="download">
+    <h1>Download</h1>
+    <div class="card">
+        <h2>Latest Release</h2>
+        <a class="button" href="#">Download</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h1>About</h1>
+    <div class="card">
+        <h2>Who is Xullys?</h2>
+        <p>A designer of ultramodern interfaces and futuristic UI tech.</p>
+    </div>
+</section>
+
+<footer>© 2025 Xullys — All Rights Reserved.</footer>
+
+<!-- PARTICLES JS INIT -->
+<script>
+tsParticles.load("tsparticles", {
+    background: { color: "transparent" },
+    particles: {
+        number: { value: 90 },
+        color: { value: ["#7f5bff", "#4dc7ff"] },
+        shape: { type: "circle" },
+        opacity: { value: 0.6 },
+        size: { value: 3 },
+        links: {
+            enable: true,
+            distance: 150,
+            color: "#7f5bff",
+            opacity: 0.4,
+            width: 1
+        },
+        move: { enable: true, speed: 1.2 }
+    },
+    fpsLimit: 60
+});
+</script>
+
+</body>
+</html>
