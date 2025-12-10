@@ -1,1 +1,1 @@
-## [XGUI]{xgui-client.github.io}
+xgui-client.github.io
